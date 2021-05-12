@@ -219,7 +219,7 @@ export default {
   },
   methods: {
     gethomedata() {
-      axios.get(`http://localhost:8080/api/management`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/management`).then(
         (result) => {
           console.log(result.data);
           this.std = result.data;
@@ -234,7 +234,7 @@ export default {
       );
     },
     gethometable() {
-      axios.get(`http://localhost:8080/api/hometablemanagement`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/hometablemanagement`).then(
         (result) => {
           console.log(result.data);
           this.stds = result.data;

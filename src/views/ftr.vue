@@ -172,7 +172,7 @@ export default{
       
      GetFTR()
      {
-         axios.get(`http://localhost:8080/api/ftrmaster/${this.currentUser.college}/${this.currentUser.department}`).then(
+         axios.get(`https://project-monitoring-backend.herokuapp.com/api/ftrmaster/${this.currentUser.college}/${this.currentUser.department}`).then(
           result => {
             console.log(result.data)
             this.ftrmast = result.data
@@ -198,7 +198,7 @@ export default{
      },
 
      EnableFTR(){
-         axios.post(`http://localhost:8080/api/ftrmaster`,{
+         axios.post(`https://project-monitoring-backend.herokuapp.com/api/ftrmaster`,{
          FTRS:this.ftrn,
          college:this.currentUser.college,
          semester:this.sem,
@@ -218,7 +218,7 @@ export default{
      },
      putFTR(){
       
-         axios.put(`http://localhost:8080/api/ftrmaster`,{
+         axios.put(`https://project-monitoring-backend.herokuapp.com/api/ftrmaster`,{
          date:this.values,
          ft:this.ftrname,
         }).then(
@@ -236,7 +236,7 @@ export default{
 
      postFTRques(){
        var count=Object.keys(this.ques).length
-       axios.post(`http://localhost:8080/api/ftrquestions`,{
+       axios.post(`https://project-monitoring-backend.herokuapp.com/api/ftrquestions`,{
          Ques:this.ques,
          ftno:this.ftrname,
          cout:count
@@ -254,7 +254,7 @@ export default{
           
      },
       getcolleges() {
-        axios.get(`http://localhost:8080/api/college`).then(
+        axios.get(`https://project-monitoring-backend.herokuapp.com/api/college`).then(
           result => {
             console.log(result.data)
              var colleges = result.data
@@ -273,7 +273,7 @@ export default{
         )
     },
       getdepartments() {
-        axios.get(`http://localhost:8080/api/department/${this.currentUser.college}`).then(
+        axios.get(`https://project-monitoring-backend.herokuapp.com/api/department/${this.currentUser.college}`).then(
           result => {
             console.log(result.data)
             var departments = result.data

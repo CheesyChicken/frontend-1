@@ -189,7 +189,7 @@ export default {
 
     getprofile() {
       axios
-        .get(`http://localhost:8080/api/guideprofile/${this.currentUser.Person_Id}`)
+        .get(`https://project-monitoring-backend.herokuapp.com/api/guideprofile/${this.currentUser.Person_Id}`)
         .then(
           (result) => {
             console.log(result.data);
@@ -205,7 +205,7 @@ export default {
     getgroups() {
       let i = 0;
       axios
-        .get(`http://localhost:8080/api/guidegroupsprofile/${this.currentUser.Person_Id}`)
+        .get(`https://project-monitoring-backend.herokuapp.com/api/guidegroupsprofile/${this.currentUser.Person_Id}`)
         .then(
           (result) => {
             console.log(result.data);
@@ -227,7 +227,7 @@ export default {
         );
     },
     getform() {
-      axios.get(`http://localhost:8080/api/person/${this.currentUser.Person_Id}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/person/${this.currentUser.Person_Id}`).then(
         (result) => {
           //console.log(result.data);
           this.tod = result.data;
@@ -240,7 +240,7 @@ export default {
     getrejectedtasks() {
       let i = 0;
       axios
-        .get(`http://localhost:8080/api/rejectedtask/${this.currentUser.Person_Id}`)
+        .get(`https://project-monitoring-backend.herokuapp.com/api/rejectedtask/${this.currentUser.Person_Id}`)
         .then(
           (result) => {
             console.log("result");

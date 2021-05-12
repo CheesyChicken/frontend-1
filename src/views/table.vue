@@ -83,7 +83,7 @@ export default {
     getdata() {
       axios
         .get(
-          `http://localhost:8080/api/alltabledir/${this.currentUser.college}/${this.sts}`
+          `https://project-monitoring-backend.herokuapp.com/api/alltabledir/${this.currentUser.college}/${this.sts}`
         )
         .then(
           (result) => {

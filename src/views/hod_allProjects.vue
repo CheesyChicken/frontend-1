@@ -137,7 +137,7 @@ export default {
 
       console.log(this.currentUser.college)
       console.log(this.currentUser.department);
-        axios.get(`http://localhost:8080/api/hodg/${this.currentUser.college}/${this.dep}`).then(
+        axios.get(`https://project-monitoring-backend.herokuapp.com/api/hodg/${this.currentUser.college}/${this.dep}`).then(
           result => {
             console.log(result.data)
             this.data = result.data

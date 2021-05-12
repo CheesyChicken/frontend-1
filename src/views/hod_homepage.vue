@@ -153,7 +153,7 @@ export default {
       console.log(this.dep);
     },
     getdata() {
-      axios.get(`http://localhost:8080/api/hod/${this.clg}/${this.dep}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/hod/${this.clg}/${this.dep}`).then(
         (result) => {
           console.log(result.data);
           this.std = result.data;
@@ -170,7 +170,7 @@ export default {
       );
     },
     getperson() {
-      axios.get(`http://localhost:8080/api/hodgroups/${this.clg}/${this.dep}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/hodgroups/${this.clg}/${this.dep}`).then(
         (result) => {
           console.log(result.data);
           var stds = result.data;

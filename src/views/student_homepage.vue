@@ -459,7 +459,7 @@ export default {
       this.show = !this.show;
     },
     getFTR12(NO) {
-      axios.get(`http://localhost:8080/api/ftrquestions/${NO}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/ftrquestions/${NO}`).then(
         (result) => {
           console.log(result.data);
           this.ftrs = result.data;
@@ -475,7 +475,7 @@ export default {
       );
     },
     issubmitted(NO) {
-      axios.get(`http://localhost:8080/api/ftrproject/${NO}/${this.group_id}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/ftrproject/${NO}/${this.group_id}`).then(
         (result) => {
           console.log("submitted");
           console.log(result.data);
@@ -497,7 +497,7 @@ export default {
     getFTR() {
       axios
         .get(
-          `http://localhost:8080/api/ftrmaster/${this.currentUser.college}/${this.currentUser.department}`
+          `https://project-monitoring-backend.herokuapp.com/api/ftrmaster/${this.currentUser.college}/${this.currentUser.department}`
         )
         .then(
           (result) => {
@@ -528,7 +528,7 @@ export default {
     },
     getTasks() {
       this.FullName = this.currentUser.FullName;
-      axios.get(`http://localhost:8080/api/task/${this.group_id}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/task/${this.group_id}`).then(
         (result) => {
           console.log(result.data);
           var toso = result.data;
@@ -545,7 +545,7 @@ export default {
       );
     },
     getform(gi) {
-      axios.get(`http://localhost:8080/api/getstartdate/${gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/getstartdate/${gi}`).then(
         (result) => {
           console.log(result.data);
           var tos = result.data;
@@ -567,7 +567,7 @@ export default {
       );
     },
     getTaskstatus() {
-      axios.get(`http://localhost:8080/api/task_status`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/task_status`).then(
         (result) => {
           console.log(result.data);
           this.tod = result.data;
@@ -578,7 +578,7 @@ export default {
       );
     },
     getDoings() {
-      axios.get(`http://localhost:8080/api/doing/${this.group_id}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/doing/${this.group_id}`).then(
         (result) => {
           console.log(result.data);
           var dos = result.data;
@@ -590,7 +590,7 @@ export default {
       );
     },
     getGroupData() {
-      axios.get(`http://localhost:8080/api/groups/${this.group_id}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/groups/${this.group_id}`).then(
         (result) => {
           console.log("groups");
           console.log(result.data);
@@ -605,7 +605,7 @@ export default {
       );
     },
     getRejects() {
-      axios.get(`http://localhost:8080/api/reject/${this.group_id}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/reject/${this.group_id}`).then(
         (result) => {
           console.log(result.data);
           var rej = result.data;
@@ -617,7 +617,7 @@ export default {
       );
     },
     getDones() {
-      axios.get(`http://localhost:8080/api/done/${this.group_id}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/done/${this.group_id}`).then(
         (result) => {
           console.log(result.data);
           var dons = result.data;
@@ -630,7 +630,7 @@ export default {
     },
     newtask() {
       axios
-        .post(`http://localhost:8080/api/task/${this.group_id}`, {
+        .post(`https://project-monitoring-backend.herokuapp.com/api/task/${this.group_id}`, {
           taskname: this.taskname,
           allotedTo: this.currentUser.Person_Id,
           DueDate: this.valueDate,
@@ -649,7 +649,7 @@ export default {
         });
 
       axios
-        .post(`http://localhost:8080/api/week/${this.group_id}`, {
+        .post(`https://project-monitoring-backend.herokuapp.com/api/week/${this.group_id}`, {
           DueDate: this.valueDate,
         })
         .then(
@@ -695,7 +695,7 @@ export default {
     },
     deleteTask(SN) {
       axios
-        .post(`http://localhost:8080/api/doing/${this.group_id}`, {
+        .post(`https://project-monitoring-backend.herokuapp.com/api/doing/${this.group_id}`, {
           SerialName: SN,
         })
         .then((res) => {
@@ -712,7 +712,7 @@ export default {
       var count = Object.keys(ftrs).length;
       console.log(ftrs);
       axios
-        .post(`http://localhost:8080/api/ftranswer`, {
+        .post(`https://project-monitoring-backend.herokuapp.com/api/ftranswer`, {
           groupid: this.group_id,
           ftr: this.ftrs,
           cout: count,
@@ -721,7 +721,7 @@ export default {
           this.getFTR();
         });
       axios
-        .post(`http://localhost:8080/api/ftrproject`, {
+        .post(`https://project-monitoring-backend.herokuapp.com/api/ftrproject`, {
           groupid: this.group_id,
           ftrno: this.Ftrno,
         })
@@ -733,7 +733,7 @@ export default {
     },
     addtask() {
       axios
-        .post(`http://localhost:8080/api/submit/${this.group_id}`, {
+        .post(`https://project-monitoring-backend.herokuapp.com/api/submit/${this.group_id}`, {
           SerialName: this.imp,
           TaskDetails: this.description,
           Challenges: this.difficulties,

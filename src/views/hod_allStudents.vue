@@ -116,7 +116,7 @@ export default {
       this.$refs.grid.pageSettings = { pageSize: pageSize + Math.round(pageResize) };
     },
     getdata(){
-        axios.get(`http://localhost:8080/api/hodstudnets/${this.currentUser.college}/${this.currentUser.department}`).then(
+        axios.get(`https://project-monitoring-backend.herokuapp.com/api/hodstudnets/${this.currentUser.college}/${this.currentUser.department}`).then(
           result => {
             console.log(result.data)
             this.students = result.data

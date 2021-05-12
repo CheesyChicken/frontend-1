@@ -328,7 +328,7 @@ successful: false,
     if (this.loggedIn) {
       this.$router.push('/profile');
     }
-    axios.get('http://localhost:8080/api/guide').then(
+    axios.get('https://project-monitoring-backend.herokuapp.com/api/guide').then(
       response => {
         this.allguides = response.data;
       },
@@ -339,7 +339,7 @@ successful: false,
           error.toString();
       }
     );
-    axios.get('http://localhost:8080/api/companies').then(
+    axios.get('https://project-monitoring-backend.herokuapp.com/api/companies').then(
       response => {
         this.allcompanies = response.data;
       },
@@ -356,7 +356,7 @@ successful: false,
   },
   methods: {
     getindus(){
-      axios.get('http://localhost:8080/api/getindusid').then(
+      axios.get('https://project-monitoring-backend.herokuapp.com/api/getindusid').then(
       response => {
         this.finalindusid = response.data[0].industry_project_id;
       },
@@ -374,10 +374,10 @@ successful: false,
 
     },
     postCandC(){
-      axios.post(`http://localhost:8080/api/postC&C/${this.companyId}/${this.collegeId}`);
+      axios.post(`https://project-monitoring-backend.herokuapp.com/api/postC&C/${this.companyId}/${this.collegeId}`);
     },
     submitgroupdetail(){
-      axios.post(`http://localhost:8080/api/submitgrp`, {
+      axios.post(`https://project-monitoring-backend.herokuapp.com/api/submitgrp`, {
           projectname: this.groupname,
           instructerid2: 2,
           instructerid1: this.guide,
@@ -444,7 +444,7 @@ successful: false,
       this.proid =  this.protypes[this.protypes1].id;
     },
     getcolleges() {
-        axios.get(`http://localhost:8080/api/college`).then(
+        axios.get(`https://project-monitoring-backend.herokuapp.com/api/college`).then(
           result => {
             console.log(result.data)
             this.colleges = result.data
@@ -456,7 +456,7 @@ successful: false,
         )
     },
       getdepartments(cl) {
-        axios.get(`http://localhost:8080/api/department/${cl}`).then(
+        axios.get(`https://project-monitoring-backend.herokuapp.com/api/department/${cl}`).then(
           result => {
             console.log(result.data)
             this.departments = result.data
@@ -467,7 +467,7 @@ successful: false,
         )
     },
       gettypes(cl){
-        axios.get(`http://localhost:8080/api/types/${cl}`).then(
+        axios.get(`https://project-monitoring-backend.herokuapp.com/api/types/${cl}`).then(
           result => {
             console.log(result.data)
             this.protypes = result.data
@@ -479,7 +479,7 @@ successful: false,
 
       },
       getdomains(){
-        axios.get(`http://localhost:8080/api/getDomains/${this.collegeId}/${this.departmentId}`).then(
+        axios.get(`https://project-monitoring-backend.herokuapp.com/api/getDomains/${this.collegeId}/${this.departmentId}`).then(
           result => {
             console.log(result.data)
             this.domains = result.data

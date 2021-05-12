@@ -268,7 +268,7 @@ export default {
   },
   methods: {
     getPDs() {
-      axios.get(`http://localhost:8080/api/pds/${this.gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/pds/${this.gi}`).then(
         (result) => {
           console.log(result.data);
           this.students = result.data;
@@ -287,7 +287,7 @@ export default {
           console.error(error);
         }
       );
-      axios.get(`http://localhost:8080/api/std/${this.gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/std/${this.gi}`).then(
         (result) => {
           console.log(result.data);
           this.stds = result.data;
@@ -300,7 +300,7 @@ export default {
 
     getweek() {
       axios
-        .get(`http://localhost:8080/api/week/${this.currentUser.group_id}`)
+        .get(`https://project-monitoring-backend.herokuapp.com/api/week/${this.currentUser.group_id}`)
         .then(
           (result) => {
             console.log(result.data);

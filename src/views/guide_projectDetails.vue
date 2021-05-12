@@ -307,7 +307,7 @@ export default {
   },
   methods: {
     getPDs() {
-      axios.get(`http://localhost:8080/api/pds/${this.gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/pds/${this.gi}`).then(
         (result) => {
           console.log(result.data);
           this.todos = result.data;
@@ -327,7 +327,7 @@ export default {
         }
       );
       let i = 0;
-      axios.get(`http://localhost:8080/api/std/${this.gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/std/${this.gi}`).then(
         (result) => {
           console.log(result.data);
           var std = result.data;
@@ -346,7 +346,7 @@ export default {
       );
     },
     getperson() {
-      axios.get(`http://localhost:8080/api/person/${this.currentUser.Person_Id}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/person/${this.currentUser.Person_Id}`).then(
         (result) => {
           console.log("person");
           console.log(result.data);
@@ -361,7 +361,7 @@ export default {
       );
     },
     getweek() {
-      axios.get(`http://localhost:8080/api/week/${this.gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/week/${this.gi}`).then(
         (result) => {
           console.log(result.data);
           this.weeks = result.data;

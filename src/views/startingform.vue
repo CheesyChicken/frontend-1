@@ -207,7 +207,7 @@ export default {
   methods: {
     getgroups() {
       axios
-        .get(`http://localhost:8080/api/getstartdate/${this.currentUser.Person_Id}`)
+        .get(`https://project-monitoring-backend.herokuapp.com/api/getstartdate/${this.currentUser.Person_Id}`)
         .then(
           (result) => {
             console.log(result.data);
@@ -225,7 +225,7 @@ export default {
     },
     getstd() {
       let i = 0;
-      axios.get(`http://localhost:8080/api/std/${this.gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/std/${this.gi}`).then(
         (result) => {
           console.log(result.data);
           var stds = result.data;
@@ -246,7 +246,7 @@ export default {
 
     postProjectDetails() {
       axios
-        .post(`http://localhost:8080/api/startingformpd/${this.gi}`, {
+        .post(`https://project-monitoring-backend.herokuapp.com/api/startingformpd/${this.gi}`, {
           projecttitle: this.ProjectTitle,
           objectives: this.Objective,
           scopes: this.Scope,
@@ -267,7 +267,7 @@ export default {
         );
     },
     addweek() {
-      axios.get(`http://localhost:8080/api/addformweek/${this.gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/addformweek/${this.gi}`).then(
         (result) => {
           console.log(result.data);
           this.$router.push("/student");

@@ -216,7 +216,7 @@ successful: false,
               
           },
     getcolleges() {
-        axios.get(`http://localhost:8080/api/college`).then(
+        axios.get(`https://project-monitoring-backend.herokuapp.com/api/college`).then(
           result => {
             console.log(result.data)
             this.colleges = result.data
@@ -228,7 +228,7 @@ successful: false,
         )
     },
       getdepartments(cl) {
-        axios.get(`http://localhost:8080/api/department/${cl}`).then(
+        axios.get(`https://project-monitoring-backend.herokuapp.com/api/department/${cl}`).then(
           result => {
             console.log(result.data)
             this.departments = result.data

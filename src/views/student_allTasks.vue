@@ -117,7 +117,7 @@ export default {
       };
     },
     getdata() {
-      axios.get(`http://localhost:8080/api/tasks/${this.groupid}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/tasks/${this.groupid}`).then(
         (result) => {
           console.log(result.data);
           this.datas = result.data;
@@ -129,7 +129,7 @@ export default {
     },
     getgroup() {
       axios
-        .get(`http://localhost:8080/api/getstartdate/${this.currentUser.Person_Id}`)
+        .get(`https://project-monitoring-backend.herokuapp.com/api/getstartdate/${this.currentUser.Person_Id}`)
         .then(
           (result) => {
             console.log(result.data);

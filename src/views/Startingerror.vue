@@ -98,7 +98,7 @@ export default {
       }
     },
     getperson() {
-      axios.get(`http://localhost:8080/api/person/${this.currentUser.Person_Id}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/person/${this.currentUser.Person_Id}`).then(
         (result) => {
           console.log(result.data);
           this.persons = result.data;
@@ -117,7 +117,7 @@ export default {
       var person = [];
       // var leaders = [];
       this.persons.forEach((element) => {
-        axios.get(`http://localhost:8080/api/groups/${element.Group_id}`).then(
+        axios.get(`https://project-monitoring-backend.herokuapp.com/api/groups/${element.Group_id}`).then(
           (result) => {
             j = j + 1;
             console.log("getform");

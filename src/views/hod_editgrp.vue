@@ -124,7 +124,7 @@ export default {
     methods:{
         getdata(){
             //${this.currentUser.college}/${this.currentUser.department}
-            axios.get(`http://localhost:8080/api/hodg/${this.currentUser.college}/${this.currentUser.department}`).then(
+            axios.get(`https://project-monitoring-backend.herokuapp.com/api/hodg/${this.currentUser.college}/${this.currentUser.department}`).then(
                 result => {
                     console.log(result.data)
                     this.data = result.data
@@ -133,7 +133,7 @@ export default {
                     console.error(error)
                 }
             )
-            axios.get(`http://localhost:8080/api/domain/${this.currentUser.department}`).then(
+            axios.get(`https://project-monitoring-backend.herokuapp.com/api/domain/${this.currentUser.department}`).then(
               result =>{
                 this.domain = result.data
               },
@@ -142,7 +142,7 @@ export default {
               }
 
             )
-            axios.get('http://localhost:8080/api/guide').then(
+            axios.get('https://project-monitoring-backend.herokuapp.com/api/guide').then(
               response => {
                 this.allguides = response.data;
               },
@@ -158,7 +158,7 @@ export default {
         deleteEntry(grpdata){
           var id = grpdata.Group_id;
           console.log(id);
-          axios.post(`http://localhost:8080/api/hod/delete/${id}`); 
+          axios.post(`https://project-monitoring-backend.herokuapp.com/api/hod/delete/${id}`);
           location.reload()
           //alert(grpdata.Group_Name)
         },
@@ -175,7 +175,7 @@ export default {
         },
         updateItem(){
           //console.log(this.editedItem.final_domain+this.editedItem.instructor1+this.editedItem.instructor2)
-          axios.put('http://localhost:8080/api/updategrp',this.editedItem)
+          axios.put('https://project-monitoring-backend.herokuapp.com/api/updategrp',this.editedItem)
           alert("SUCCESSFUL")
           this.dialog2 = false
           location.reload()

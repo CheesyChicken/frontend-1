@@ -157,7 +157,7 @@ export default {
       };
     },
     getdata() {
-      axios.get(`http://localhost:8080/api/tablemanagement`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/tablemanagement`).then(
         (result) => {
           console.log(result.data);
           this.data = result.data;

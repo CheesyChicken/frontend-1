@@ -290,7 +290,7 @@ export default {
     GetFTR() {
       axios
         .get(
-          `http://localhost:8080/api/ftrmaster/${this.currentUser.college}/${this.currentUser.department}`
+          `https://project-monitoring-backend.herokuapp.com/api/ftrmaster/${this.currentUser.college}/${this.currentUser.department}`
         )
         .then(
           (result) => {
@@ -305,7 +305,7 @@ export default {
     Getproject() {
       axios
         .get(
-          `http://localhost:8080/api/ftrproject/${this.currentUser.college}/${this.currentUser.department}/${this.ftr_master}`
+          `https://project-monitoring-backend.herokuapp.com/api/ftrproject/${this.currentUser.college}/${this.currentUser.department}/${this.ftr_master}`
         )
         .then(
           (result) => {
@@ -387,7 +387,7 @@ export default {
     GetFTR1() {
       axios
         .get(
-          `http://localhost:8080/api/ftrmaster/${this.currentUser.college}/${this.currentUser.department}`
+          `https://project-monitoring-backend.herokuapp.com/api/ftrmaster/${this.currentUser.college}/${this.currentUser.department}`
         )
         .then(
           (result) => {
@@ -414,7 +414,7 @@ export default {
 
     EnableFTR() {
       axios
-        .post(`http://localhost:8080/api/ftrmaster`, {
+        .post(`https://project-monitoring-backend.herokuapp.com/api/ftrmaster`, {
           FTRS: this.ftrn,
           ay: this.ay,
           college: this.currentUser.college,
@@ -450,7 +450,7 @@ export default {
     putFTR() {
       console.log(this.enabledate);
       axios
-        .post(`http://localhost:8080/api/ftrmasters`, {
+        .post(`https://project-monitoring-backend.herokuapp.com/api/ftrmasters`, {
           date: this.enabledate,
           ft: this.ftrname,
         })
@@ -465,7 +465,7 @@ export default {
           }
         );
       axios
-        .post(`http://localhost:8080/api/ftremail`, {
+        .post(`https://project-monitoring-backend.herokuapp.com/api/ftremail`, {
           dep: this.currentUser.Department_id,
         })
         .then(
@@ -484,7 +484,7 @@ export default {
     postFTRques() {
       var count = Object.keys(this.ques).length;
       axios
-        .post(`http://localhost:8080/api/ftrquestions`, {
+        .post(`https://project-monitoring-backend.herokuapp.com/api/ftrquestions`, {
           Ques: this.ques,
           ftno: this.ftrname,
           cout: count,
@@ -503,7 +503,7 @@ export default {
       this.hideModal();
     },
     getcolleges() {
-      axios.get(`http://localhost:8080/api/college`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/college`).then(
         (result) => {
           console.log(result.data);
           var colleges = result.data;
@@ -520,7 +520,7 @@ export default {
       );
     },
     getdepartments() {
-      axios.get(`http://localhost:8080/api/department/${this.currentUser.college}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/department/${this.currentUser.college}`).then(
         (result) => {
           console.log(result.data);
           var departments = result.data;

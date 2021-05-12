@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     gethome() {
-      axios.get(`http://localhost:8080/api/home/${this.currentUser.grno_EmpCode}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/home/${this.currentUser.grno_EmpCode}`).then(
         (result) => {
           console.log("home");
           console.log(result.data);
@@ -87,7 +87,7 @@ export default {
       );
     },
     getweek() {
-      axios.get(`http://localhost:8080/api/noweek/${this.currentUser.grno_EmpCode}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/noweek/${this.currentUser.grno_EmpCode}`).then(
         (result) => {
           console.log(result.data);
           var datas = result.data;

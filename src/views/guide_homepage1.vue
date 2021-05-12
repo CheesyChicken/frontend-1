@@ -511,7 +511,7 @@ export default {
       });
     },
     getGroupData() {
-      axios.get(`http://localhost:8080/api/groups/${this.gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/groups/${this.gi}`).then(
         (result) => {
           console.log("groups");
           console.log(result.data);
@@ -528,7 +528,7 @@ export default {
     getstd() {
       console.log(this.gi);
       let i = 0;
-      axios.get(`http://localhost:8080/api/std/${this.gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/std/${this.gi}`).then(
         (result) => {
           console.log(result.data);
           var stds = result.data;
@@ -547,7 +547,7 @@ export default {
       );
     },
     getperson() {
-      axios.get(`http://localhost:8080/api/person/${this.currentUser.Person_Id}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/person/${this.currentUser.Person_Id}`).then(
         (result) => {
           console.log("person");
           console.log(result.data);
@@ -562,7 +562,7 @@ export default {
       );
     },
     getFTR12(NO) {
-      axios.get(`http://localhost:8080/api/ftranswer/${NO}/${this.gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/ftranswer/${NO}/${this.gi}`).then(
         (result) => {
           console.log(result.data);
           this.ftrs = result.data;
@@ -578,7 +578,7 @@ export default {
     },
 
     issubmitted(NO) {
-      axios.get(`http://localhost:8080/api/ftrproject/${NO}/${this.gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/ftrproject/${NO}/${this.gi}`).then(
         (result) => {
           console.log("submitted");
           console.log(result.data);
@@ -611,7 +611,7 @@ export default {
     getFTR() {
       axios
         .get(
-          `http://localhost:8080/api/ftrmaster/${this.currentUser.college}/${this.currentUser.department}`
+          `https://project-monitoring-backend.herokuapp.com/api/ftrmaster/${this.currentUser.college}/${this.currentUser.department}`
         )
         .then(
           (result) => {
@@ -642,7 +642,7 @@ export default {
     },
     getTasks() {
       console.log(this.gi);
-      axios.get(`http://localhost:8080/api/task/${this.gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/task/${this.gi}`).then(
         (result) => {
           console.log(result.data);
           var toso = result.data;
@@ -658,7 +658,7 @@ export default {
         }
       );
 
-      axios.put(`http://localhost:8080/api/week/${this.gi}`).then(
+      axios.put(`https://project-monitoring-backend.herokuapp.com/api/week/${this.gi}`).then(
         (result) => {
           console.log(result.data);
           this.tos = result.data;
@@ -669,7 +669,7 @@ export default {
       );
     },
     getDeletes() {
-      axios.get(`http://localhost:8080/api/deletes/${this.gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/deletes/${this.gi}`).then(
         (result) => {
           console.log(result.data);
           this.deletes = result.data;
@@ -680,7 +680,7 @@ export default {
       );
     },
     getDoings() {
-      axios.get(`http://localhost:8080/api/doing/${this.gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/doing/${this.gi}`).then(
         (result) => {
           console.log(result.data);
           var dos = result.data;
@@ -692,7 +692,7 @@ export default {
       );
     },
     getSubmits() {
-      axios.get(`http://localhost:8080/api/submit/${this.gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/submit/${this.gi}`).then(
         (result) => {
           console.log(result.data);
           var reqs = result.data;
@@ -704,7 +704,7 @@ export default {
       );
     },
     getDones() {
-      axios.get(`http://localhost:8080/api/done/${this.gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/done/${this.gi}`).then(
         (result) => {
           console.log(result.data);
           var dons = result.data;
@@ -717,7 +717,7 @@ export default {
     },
     newtask() {
       axios
-        .post(`http://localhost:8080/api/task/${this.gi}`, {
+        .post(`https://project-monitoring-backend.herokuapp.com/api/task/${this.gi}`, {
           taskname: this.taskname,
           allotedTo: this.selected2,
           DueDate: this.valueDate,
@@ -735,7 +735,7 @@ export default {
           console.log(err);
         });
       axios
-        .post(`http://localhost:8080/api/week/${this.gi}`, {
+        .post(`https://project-monitoring-backend.herokuapp.com/api/week/${this.gi}`, {
           DueDate: this.valueDate,
         })
         .then(
@@ -791,7 +791,7 @@ export default {
     },
     deleteTask(SN) {
       axios
-        .post("http://localhost:8080/api/done", {
+        .post("https://project-monitoring-backend.herokuapp.com/api/done", {
           SerialName: SN,
         })
         .then((res) => {
@@ -804,7 +804,7 @@ export default {
           console.log(err);
         });
       axios
-        .post("http://localhost:8080/api/task_status", {
+        .post("https://project-monitoring-backend.herokuapp.com/api/task_status", {
           SerialName: SN,
         })
         .then((res) => {
@@ -820,7 +820,7 @@ export default {
     redoTask() {
       // this.status++
       axios
-        .put("http://localhost:8080/api/doing", {
+        .put("https://project-monitoring-backend.herokuapp.com/api/doing", {
           Reason: this.Reason,
           SerialName: this.ids,
           Due_date: this.newDueDate,
@@ -838,7 +838,7 @@ export default {
     },
     deleteT(SN) {
       axios
-        .put("http://localhost:8080/api/task", {
+        .put("https://project-monitoring-backend.herokuapp.com/api/task", {
           SerialName: SN,
         })
         .then((res) => {
@@ -852,7 +852,7 @@ export default {
     },
     readdTask() {
       axios
-        .post("http://localhost:8080/api/deletes", {
+        .post("https://project-monitoring-backend.herokuapp.com/api/deletes", {
           SerialName: this.imp,
           DueDate: this.Duedate,
         })
@@ -868,7 +868,7 @@ export default {
     },
     submitFTR(ftrs) {
       axios
-        .put(`http://localhost:8080/api/ftranswer`, {
+        .put(`https://project-monitoring-backend.herokuapp.com/api/ftranswer`, {
           groupid: this.gi,
           ftr: ftrs,
         })
@@ -883,7 +883,7 @@ export default {
     },
     groupftr() {
       axios
-        .put(`http://localhost:8080/api/ftrproject`, {
+        .put(`https://project-monitoring-backend.herokuapp.com/api/ftrproject`, {
           groupid: this.gi,
           ftrmasterno: this.ftrmasterno,
           remark: this.remark,

@@ -81,7 +81,7 @@ export default {
                     return;
                     }
                 if(this.Company_Name){
-                    axios.post(`http://localhost:8080/api//addcmp/${this.Company_Name}`);
+                    axios.post(`https://project-monitoring-backend.herokuapp.com/api//addcmp/${this.Company_Name}`);
 
                 }
                 

@@ -150,7 +150,7 @@ export default {
   methods: {
     getdata() {
       console.log(this.gi);
-      axios.get(`http://localhost:8080/api/tasks/${this.gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/tasks/${this.gi}`).then(
         (result) => {
           console.log(result.data);
           this.datas = result.data;
@@ -177,7 +177,7 @@ export default {
       }
     },
     getperson() {
-      axios.get(`http://localhost:8080/api/person/${this.currentUser.Person_Id}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/person/${this.currentUser.Person_Id}`).then(
         (result) => {
           console.log("person");
           console.log(result.data);

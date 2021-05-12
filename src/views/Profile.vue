@@ -243,7 +243,7 @@ export default {
     },
     getstudent() {
       let j = 0;
-      axios.get(`http://localhost:8080/api/std/${this.groupid}}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/std/${this.groupid}}`).then(
         (result) => {
           console.log(result.data);
           var temp = result.data;
@@ -271,7 +271,7 @@ export default {
     },
     gettask() {
       axios
-        .get(`http://localhost:8080/api/profiletask/${this.currentUser.Person_Id}`)
+        .get(`https://project-monitoring-backend.herokuapp.com/api/profiletask/${this.currentUser.Person_Id}`)
         .then(
           (result) => {
             console.log(result.data);
@@ -286,7 +286,7 @@ export default {
         );
     },
     getprofile() {
-      axios.get(`http://localhost:8080/api/profile/${this.groupid}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/profile/${this.groupid}`).then(
         (result) => {
           console.log(result.data);
           var profile = result.data;
@@ -312,7 +312,7 @@ export default {
     },
     getform() {
       axios
-        .get(`http://localhost:8080/api/getstartdate/${this.currentUser.Person_Id}`)
+        .get(`https://project-monitoring-backend.herokuapp.com/api/getstartdate/${this.currentUser.Person_Id}`)
         .then(
           (result) => {
             console.log(result.data);

@@ -135,7 +135,7 @@ export default {
 
   methods: {
     getdata() {
-      axios.get(`http://localhost:8080/api/hoddir/${this.dep}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/hoddir/${this.dep}`).then(
         (result) => {
           console.log(result.data);
           this.std = result.data;
@@ -152,7 +152,7 @@ export default {
       );
     },
     getperson() {
-      axios.get(`http://localhost:8080/api/hoddirgroups/${this.dep}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/hoddirgroups/${this.dep}`).then(
         (result) => {
           console.log(result.data);
           var stds = result.data;

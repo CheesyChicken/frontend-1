@@ -136,7 +136,7 @@ export default {
       }
     },
     getform(gi) {
-      axios.get(`http://localhost:8080/api/groups/${gi}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/groups/${gi}`).then(
         (result) => {
           console.log(result.data);
           var group = result.data;
@@ -151,7 +151,7 @@ export default {
       );
     },
     getperson() {
-      axios.get(`http://localhost:8080/api/person/${this.currentUser.Person_Id}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/person/${this.currentUser.Person_Id}`).then(
         (result) => {
           console.log("person");
           console.log(result.data);

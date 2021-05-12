@@ -183,7 +183,7 @@ export default {
   },
   methods: {
     getdata() {
-      axios.get(`http://localhost:8080/api/homedir/${this.currentUser.college}`).then(
+      axios.get(`https://project-monitoring-backend.herokuapp.com/api/homedir/${this.currentUser.college}`).then(
         (result) => {
           console.log(result.data);
           this.std = result.data;
@@ -199,7 +199,7 @@ export default {
     },
     gettable() {
       axios
-        .get(`http://localhost:8080/api/hometabledir/${this.currentUser.college}`)
+        .get(`https://project-monitoring-backend.herokuapp.com/api/hometabledir/${this.currentUser.college}`)
         .then(
           (result) => {
             console.log(result.data);
